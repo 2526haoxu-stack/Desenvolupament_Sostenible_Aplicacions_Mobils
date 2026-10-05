@@ -64,13 +64,13 @@ class MainActivity : AppCompatActivity() {
 
         // Las funciones
         // Cards --> Start
-        cardHome.setOnClickListener { // Male Card - activity_Main
+        cardHome.setOnClickListener { // Male Card
             cardHome.setCardBackgroundColor(Color.rgb(173, 216, 230))
             cardDona.setCardBackgroundColor(Color.rgb(29, 30, 51))
             homeSelected = true
         }
 
-        cardDona.setOnClickListener{ // Female Card - activity_Main
+        cardDona.setOnClickListener{ // Female Card
             cardDona.setCardBackgroundColor(Color.rgb(173, 216, 230))
             cardHome.setCardBackgroundColor(Color.rgb(29, 30, 51))
             homeSelected = false
@@ -78,37 +78,40 @@ class MainActivity : AppCompatActivity() {
         // Cards --> End
 
         // Bottons --> Start
-        bottomWeightAdd.setOnClickListener { // Weight Add Button - activity_Main
+        bottomWeightAdd.setOnClickListener { // Weight Add Button
             weight+= 1
             textWeight.text = weight.toString()
         }
 
-        bottomWeightRemove.setOnClickListener { // Weight Remove Button - activity_Main
+        bottomWeightRemove.setOnClickListener { // Weight Remove Button
             weight-= if (weight > 0) 1 else 0
             textWeight.text = weight.toString()
         }
 
-        bottomAgeAdd.setOnClickListener { // Age Add Button - activity_Main
+        bottomAgeAdd.setOnClickListener { // Age Add Button
             age+= 1
             textAge.text = age.toString()
         }
 
-        bottomAgeRemove.setOnClickListener { // Age Remove Button - activity_Main
+        bottomAgeRemove.setOnClickListener { // Age Remove Button
             age-= if (age > 0) 1 else 0
             textAge.text = age.toString()
         }
 
         calculate.setOnClickListener {
-            var intent = Intent(this, ResultActivity::class.java)
+            var intent = Intent(this, ResultActivity::class.java).apply {
+                putExtra(ResultActivity.EXTRA_ALCADA, sHeight.value.toInt())
+                putExtra(ResultActivity.EXTRA_PES, weight)
+            }
             startActivity(intent)
         }
         // Bottons --> End
 
         // Slider --> Start
-        sHeight.valueFrom = 0f // Height Slider Data - activity_Main
-        sHeight.valueTo = 100f // Height Slider Data - activity_Main
-        sHeight.stepSize = 1f // Height Slider Data - activity_Main
-        sHeight.value = 73f // Height Slider Data - activity_Main
+        sHeight.valueFrom = 0f // Height Slider Data
+        sHeight.valueTo = 300f // Height Slider Data
+        sHeight.stepSize = 1f // Height Slider Data
+        sHeight.value = 73f // Height Slider Data
         
         sHeight.addOnChangeListener { _, value, _ ->  textHeight.text = value.toString() } // Height Slider - activity_Main
         // Slder --> End

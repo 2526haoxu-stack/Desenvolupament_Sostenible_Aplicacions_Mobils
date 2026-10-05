@@ -62,14 +62,16 @@
             android:gravity="center_horizontal">
             
             <TextView
+                android:id="@+id/aRLargeResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="NORMAL"
                 android:textSize="36sp"
-                android:textColor="@color/white"
+                android:textColor="@color/greenSoft"
                 android:layout_weight="0.3"/>
 
             <TextView
+                android:id="@+id/aRResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="22.43"
@@ -78,6 +80,7 @@
                 android:layout_weight="0.3"/>
             
             <TextView
+                android:id="@+id/aRSmallResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Normal"

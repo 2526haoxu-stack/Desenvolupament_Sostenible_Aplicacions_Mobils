@@ -113,18 +113,31 @@
                     android:text="Height"
                     android:textSize="24sp"/>
 
-                <TextView
-                    android:id="@+id/aMTextHeight"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="73inches"
-                    android:textColor="@color/white"
-                    android:textSize="48sp"/>
-                
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/aMTextHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="73"
+                        android:textColor="@color/white"
+                        android:textSize="48sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cm"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"/>
+                </LinearLayout>
+
                 <com.google.android.material.slider.Slider
                     android:id="@+id/aMSlHeight"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
             </LinearLayout>
 
