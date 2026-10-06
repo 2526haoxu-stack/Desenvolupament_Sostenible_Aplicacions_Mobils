@@ -27,9 +27,9 @@
             app:icon="@drawable/less_than24"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="BMI Result"
+            android:text="@string/bmi_result"
             android:textSize="36sp"
             android:textColor="@color/white"
             android:layout_weight="1"/>
@@ -49,7 +49,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Your Results"
+            android:text="@string/your_results"
             android:textSize="48sp"
             android:textColor="@color/white"
             android:layout_marginBottom="25dp"/>
@@ -65,7 +65,7 @@
                 android:id="@+id/aRLargeResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NORMAL"
+                android:text="@string/normal"
                 android:textSize="36sp"
                 android:textColor="@color/greenSoft"
                 android:layout_weight="0.3"/>
@@ -74,7 +74,7 @@
                 android:id="@+id/aRResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="22.43"
+                android:text="@string/_22_43"
                 android:textColor="@color/white"
                 android:textSize="96sp"
                 android:layout_weight="0.3"/>
@@ -83,7 +83,7 @@
                 android:id="@+id/aRSmallResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Normal"
+                android:text="@string/Normal"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:layout_weight="0.3"/>
@@ -104,7 +104,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RE-CALCULATE"
+            android:text="@string/re_calculate"
             android:textColor="@color/white"
             android:textSize="36sp"/>
 
