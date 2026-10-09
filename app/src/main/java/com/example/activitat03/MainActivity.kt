@@ -3,18 +3,14 @@ package com.example.activitat03
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.Slider
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     var homeSelected: Boolean = false
     lateinit var cardHome : MaterialCardView
     lateinit var cardDona : MaterialCardView
-    lateinit var title : LinearLayout
     var weight = 170
     var age = 18
     lateinit var bottomWeightRemove : MaterialButton
@@ -47,20 +42,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Vincular la variable con el ID --> vVI Start
-        cardHome = findViewById<MaterialCardView>(R.id.aMSeleccio_home) // Male Option
-        cardDona = findViewById<MaterialCardView>(R.id.aMSeleccio_done) // Female Option
+        cardHome = findViewById(R.id.aMSeleccio_home) // Male Option
+        cardDona = findViewById(R.id.aMSeleccio_done) // Female Option
 
-        bottomWeightAdd = findViewById<MaterialButton>(R.id.aMWeightAdd) // Button Add Weight
-        bottomWeightRemove = findViewById<MaterialButton>(R.id.aMWeightRemove) // Button Remove Weight
-        bottomAgeAdd = findViewById<MaterialButton>(R.id.aMAgeAdd) // Button Add Age
-        bottomAgeRemove = findViewById<MaterialButton>(R.id.aMAgeRemove) // Button Remove Age
-        calculate = findViewById<LinearLayout>(R.id.aMCalculate) // Button to calculate
+        bottomWeightAdd = findViewById(R.id.aMWeightAdd) // Button Add Weight
+        bottomWeightRemove = findViewById(R.id.aMWeightRemove) // Button Remove Weight
+        bottomAgeAdd = findViewById(R.id.aMAgeAdd) // Button Add Age
+        bottomAgeRemove = findViewById(R.id.aMAgeRemove) // Button Remove Age
+        calculate = findViewById(R.id.aMCalculate) // Button to calculate
 
-        textWeight = findViewById<TextView>(R.id.aMWeightText) // Weight Text
-        textAge = findViewById<TextView>(R.id.aMAgeText) // Age Text
-        textHeight = findViewById<TextView>(R.id.aMTextHeight) // Height Text
+        textWeight = findViewById(R.id.aMWeightText) // Weight Text
+        textAge = findViewById(R.id.aMAgeText) // Age Text
+        textHeight = findViewById(R.id.aMTextHeight) // Height Text
 
-        sHeight = findViewById<Slider>(R.id.aMSlHeight) // Slider
+        sHeight = findViewById(R.id.aMSlHeight) // Slider
         // vVI End
 
         // Las funciones
@@ -100,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         calculate.setOnClickListener {
-            var intent = Intent(this, ResultActivity::class.java).apply {
+            val intent = Intent(this, ResultActivity::class.java).apply {
                 putExtra(ResultActivity.EXTRA_ALCADA, sHeight.value.toInt())
                 putExtra(ResultActivity.EXTRA_PES, weight)
             }

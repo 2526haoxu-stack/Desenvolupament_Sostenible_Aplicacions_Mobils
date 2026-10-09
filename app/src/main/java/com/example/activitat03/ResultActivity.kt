@@ -36,16 +36,16 @@ class ResultActivity : AppCompatActivity() {
         }
 
         // Vincular la variable con el ID --> vVI Start
-        bottonBack = findViewById<Button>(R.id.aRBack)
-        reCalculate = findViewById<LinearLayout>(R.id.aRReCalculate)
-        resultText = findViewById<TextView>(R.id.aRResult)
-        largeResult = findViewById<TextView>(R.id.aRLargeResult)
-        smallResult = findViewById<TextView>(R.id.aRSmallResult)
+        bottonBack = findViewById(R.id.aRBack)
+        reCalculate = findViewById(R.id.aRReCalculate)
+        resultText = findViewById(R.id.aRResult)
+        largeResult = findViewById(R.id.aRLargeResult)
+        smallResult = findViewById(R.id.aRSmallResult)
         // --> vVI End
 
         // Operaciones --> ops Start
-        var alcadaMetro = alcada/100.0
-        var result = pes / (alcadaMetro * alcadaMetro)
+        val alcadaMetro = alcada/100.0
+        val result = pes / (alcadaMetro * alcadaMetro)
         resultText.text = String.format("%.2f", result)
 
         if (result < 18.5) {
@@ -66,19 +66,18 @@ class ResultActivity : AppCompatActivity() {
         // Las funciones
         // LinearLayout --> Start
         reCalculate.setOnClickListener {
-            var intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         // LinearLayout --> End
 
         // Buttons --> Start
         bottonBack.setOnClickListener {
-            var intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         // Buttons --> End
     }
-
 
     companion object {
         const val EXTRA_ALCADA = "extra_alcada"
